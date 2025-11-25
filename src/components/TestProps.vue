@@ -12,7 +12,7 @@
 
             <div class="mt-auto">
                 <small class="text-info d-block mb-2">⭐ {{ foodMenu.rating }} ({{ foodMenu.reviews }} Reviews)</small>
-                <a href="#" @click="changeButtonBg()"
+                <a @click="changeButtonBg()"
                     :class="foodMenu.favBtnBg ? 'btn btn-primary btn-block' : 'btn btn-danger btn-block'">Add to Cart</a>
             </div>
         </div>

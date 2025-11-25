@@ -33,7 +33,8 @@ export default {
 </script>
 
 <template>
-  <!-- <component :is="'Temp-Com'"/> -->
+  <component :is="'Temp-Com'"/>
+   <Fallthrough-Com/>
   <div class="row mb-2">
     <div class="row g-4">
       <div v-for="food in foodMenu" class="col-sm-12 col-md-6 col-lg-3 d-flex">

@@ -1,4 +1,4 @@
-<style>
+<style scoped>
     li {
       display: inline-block;
       flex-basis: 80px;
@@ -31,11 +31,21 @@
     <ul>
         <li v-for="(item, index) in items"><img @click="select(index)" :src="item.img" alt="" :class="{selClass: item.sel}"></li>
     </ul>
+    <!-- get local component here: -->
+    get local component here:
+    <local-compo/>
+    ---------------------------
+    <br>
 </template>
 
 
 <script>
+import LocalCompo from './LocalCompo.vue';
+
 export default {
+    components: {
+        'local-compo':LocalCompo
+    },
     data() {
         return {
             items: [
