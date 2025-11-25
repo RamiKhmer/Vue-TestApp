@@ -9,13 +9,11 @@
                 <h5 class="text-success font-weight-bold">${{ foodMenu.price }}</h5>
             </div>
             
-            <p class="card-text text-muted mb-3">
-                {{ foodMenu.desc }}
-            </p>
+            <component is="Food-Desc" :food-desc="foodMenu.desc"></component>
             
             <div class="mt-auto">
                 <small class="text-info d-block mb-2">⭐ {{ foodMenu.rating }} ({{ foodMenu.reviews }} Reviews)</small>
-                <a href="#" class="btn btn-primary btn-block">Add to Cart</a>
+                <a href="#" @click="changeButtonBg()" :class="favBtnBg? 'btn btn-primary btn-block':'btn btn-danger btn-block'">Add to Cart</a>
             </div>
         </div>
     </div>
@@ -28,6 +26,17 @@
             'foodMenu': {
                 type: Object,
                 required: true
+            }
+        },
+    data(){
+            return {
+                favBtnBg: false
+            };
+    },
+
+        methods: {
+            changeButtonBg(){
+             this.favBtnBg = !this.favBtnBg;   
             }
         }
     };
